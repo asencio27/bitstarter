@@ -4,7 +4,12 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   //response.send('Hello World 2!');
-    response.send('Hello World 3!');
+    var fs = require('fs');
+    var readFile = fs.readFile('index.html');
+    var buffer = new Buffer(16);
+    buffer.write(readFile);
+    buffer.toString('utf-8');
+
 });
 
 var port = process.env.PORT || 5000;
