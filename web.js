@@ -5,7 +5,7 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
   //response.send('Hello World 2!');
     var fs = require('fs');
-    var buffer = new Buffer();
+    var buffer = new Buffer(64);
     response.send(buffer.toStrint('uft8', fs.readFileSync('index.html')));
 
 //	var buffer = new Buffer(16);
